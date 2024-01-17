@@ -7,7 +7,7 @@ services:
     #ambiente para colocar las configuracion para conectarme a mi BD
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_DB_ROOT_PASSWORD}"
-      MYSQL_USERNAME: "${MYSQL_DB_USERNAME}"
+      MYSQL_USER: "${MYSQL_DB_USERNAME}"
       MYSQL_DATABASE: "${MYSQL_DB_NAME}"
       MYSQL_PASSWORD: "${MYSQL_DB_PASSWORD}"
       
@@ -15,7 +15,7 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
-      - 3309:${MYSQL_DB_PORT}
+      - 3309:3306
 
 volumes:
   mysql:
