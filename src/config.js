@@ -1,8 +1,11 @@
 const dotenv = require("dotenv");
+/* Especifico la ruta de mi archivo para traerme mis variables de entorno sino me daba conflicto con la otra */
 dotenv.config({ path: 'src/.env' });
 
 const mysql = require("mysql2");
 let connection;
+
+/* Meto mi coneccion en un try para manejarla cuando falle */
 try {
   connection = mysql.createConnection({
     host: process.env.DBHOST,
@@ -15,17 +18,7 @@ try {
   console.log("Error al conectar con la base de datos");
 }
 
-/* try {
-  connection = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password: 'secret',
-    database: 'node',
-    port: '3309',
-  });
-} catch (error) {
-  console.log("Error al conectar con la base de datos");
-} */
+/* Empaqueto mi conexion */
 module.exports = { connection };
 
 
