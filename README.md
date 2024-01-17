@@ -1,4 +1,8 @@
 # Node-expres
+
+<h2>Problemas</h2>
+La carpeta mysql no se pudo subir y se encuentra en el archivo comprimido
+
 <h2>Uso</h2>
 En primer lugar levantaremos el contenedor docker con un comando:
 
@@ -16,4 +20,4 @@ Por ultimo, para que nuestro vaya escuchando cada momento usamos este comando
 **nodemon src/app.js** : Nos colocamos sobre la app.js para que escuche el puerto 3000 y haga las llamadas
 
 <h2>La estructura </h2>
-
+En la carpeta src se encuentra el trabajo de node y fuera de ella los elementos listos para dockerizar y se tendria que incluir la carpeta permanente de mysql
