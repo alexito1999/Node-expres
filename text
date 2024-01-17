@@ -1,0 +1,23 @@
+docker BUILDKIT=0 
+
+
+
+Plugins AWS:
+plugin aws click
+
+Plugins Docker:
+    Docker pipeline
+    Docker Plugin
+    Docker-build-step
+
+Partes de la tarea:
+    **Punto 1 ya lo tenemos.
+    **Punto 2: Subir el proyecto de MARIA
+    JENKINS TIENE QUE TRAERE MI CODIGO Y LO GUARDAR EN UNA CARPETA WORKSPACE Y ESO COPIARLO AL HTTDOCS 
+
+stage {
+    stage{"Code"}
+    stage{"Build"}
+    stage{"Deploy"}
+}
+
