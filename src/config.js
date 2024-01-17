@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-dotenv.config();
+dotenv.config({ path: 'src/.env' });
 
 const mysql = require("mysql2");
 let connection;
@@ -15,4 +15,17 @@ try {
   console.log("Error al conectar con la base de datos");
 }
 
+/* try {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user:'root',
+    password: 'secret',
+    database: 'node',
+    port: '3309',
+  });
+} catch (error) {
+  console.log("Error al conectar con la base de datos");
+} */
 module.exports = { connection };
+
+
