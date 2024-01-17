@@ -10,6 +10,7 @@ app.get("/", function (req, res) {
   res.send("Hola Mundo!");
 });
 
+/* GET */
 /* Mostrar todos los alumnos */
 const getEstudiantes = (request, response) => {
   connection.query("SELECT * FROM estudiantes", (error, results) => {
@@ -42,6 +43,8 @@ const insertarEstudiante = (request, response) => {
     }
   );
 };
+
+/* Delete */
 //Borrar alumno
 const borrarEstudiante = (request, response) => {
   const id = request.params.id;
@@ -52,6 +55,21 @@ const borrarEstudiante = (request, response) => {
   throw error;
   response.status(201).json({"Item eliminado":results.affectedRows});
   });
+  };
+
+/* PUT */
+const actualizarEstudiante = (request, response) => {
+  const { nombre, apellido, fecha_nacimiento, dureccion, telefono, codigo_postal, email } = request.body;
+  connection.query(
+    "UPDATE estudiantes SET nombre = ?, apellido = ?, fecha_nacimiento = ?, direccion = ?, telefono = ?, codigo_postal = ?, email = ? WHERE id = ?",
+    [nombre, apellido, fecha_nacimiento, dureccion, telefono, codigo_postal, email],
+    (error, results) => {
+      if (error) throw error;
+      response
+        .status(201)
+        .json({ "Item añadido correctamente": results.affectedRows });
+    }
+  );
   };
 
 /* ruta */
